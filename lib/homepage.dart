@@ -10,18 +10,22 @@ class HomePage extends StatelessWidget {
       itemCount: 3,
       itemBuilder: (context, i) {
         return Column(
-          //crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //이미지 업로드 공간
             Container(
-              width: 500,
-              height: 400,
-              color: Colors.white,
-              child: Image.asset('assets/image.jpg'),
-            ),
+                color: Colors.blueAccent,
+                constraints: BoxConstraints(maxWidth: 600, maxHeight: 300),
+                width: double.infinity,
+                height: double.infinity,
+                child: Image.network(
+                    'https://pbs.twimg.com/media/FEVEgvLakAAj3i3?format=jpg&name=4096x4096')),
             //글씨 업로드 공간
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 20, 0, 20),
+            Container(
+              color: Colors.amber,
+              //글쓰는 부분(크기)(공간)에 제한을 줌.(큰 디스플레이에서도 UI를 유지하도록)
+              constraints: BoxConstraints(maxWidth: 600),
+              width: double.infinity,
+              padding: EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -44,7 +48,7 @@ class HomePage extends StatelessWidget {
                   Text('1월 13일')
                 ],
               ),
-            )
+            ),
           ],
         );
       },

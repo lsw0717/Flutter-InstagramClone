@@ -12,4 +12,6 @@ var theme = ThemeData(
         iconTheme: IconThemeData(color: Colors.black)),
     iconTheme: IconThemeData(color: Colors.black),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        selectedItemColor: Colors.black, backgroundColor: Colors.white));
+        unselectedItemColor: Colors.black,
+        selectedItemColor: Colors.black,
+        backgroundColor: Colors.white));
